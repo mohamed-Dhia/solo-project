@@ -153,10 +153,23 @@ var actionScene = function () {
 	$('.choose').show()
 	$('body').css('background-image','url(' + this.events[this.index].backGroundPic + ')');
 	$('.choose').append('<div class =  event id = ' + this.index + '> what would you do ? <br></div>')
-	$('.choose').append('<div><button class = option >' + this.events[this.index].choises[0] + '</button>  <button class = option >' + this.events[this.index].choises[1] + '</button>  <button class = option >' + this.events[this.index].choises[2] + '</button> </div>')
-	$('.option').on('click',function(){
+	$('.choose').append('<div><button class = option id = good>' + this.events[this.index].choises[0] + '</button>  <button class = option id = meh>' + this.events[this.index].choises[1] + '</button>  <button class = option id = bad>' + this.events[this.index].choises[2] + '</button> </div>')
+
+	$('#bad').on('click',function(){
+		that.score += 0;
 		that.afterScript()
 	})
+
+	$('#meh').on('click',function(){
+		that.score += 5;
+		that.afterScript()
+	})
+
+	$('#good').on('click',function(){
+		that.score += 10;
+		that.afterScript()
+	})
+
 } 
 
 var afterScript = function() {
@@ -164,42 +177,63 @@ var afterScript = function() {
 	$('body').html("")
 	$('body').append("<div class = prompt></div>")
 	$('.prompt').show()
-	//$('body').css({'background-image':'url(' + events[0].backGroundPic + ')','background-size':'100% 100%','background-repeat':'no-repeat','height' : '800px'})
-	// $('body').css('background-image','url(https://i.pinimg.com/originals/49/df/93/49df93c9996e7c80736724c2cea3b897.jpg)')
 	$('body').css('background-image','url(' + this.events[this.index].backGroundPic + ')');
 	$('.prompt').append('<div class =  event id = ' + this.index + '>'+ this.events[this.index].afScript + '</div>')
 	$('.prompt').append('<button class = advance id = actionScene> next>> </button>')
 	this.cnt++
-	// console.log(this.events)
 	this.events.splice(this.index,1)
-	// console.log(this.events)
-	$('#actionScene').on('click',function(){
-		that.setTheScene()
-	})
+	if(this.cnt < 3){
+		$('#actionScene').on('click',function(){
+			that.setTheScene()
+		})
+	} else {
+		$('#actionScene').on('click',function(){
+			that.endScript()
+		})
+	}
+
 }
 
+var endScript = function(){
+	var that = this 
+	$('body').html("")
+	$('body').css("background-image","url(https://wallpaperplay.com/walls/full/a/5/6/11249.jpg)")
+	$('body').append("<div class = result></div>")
+	$('.result').show()
+	$('.result').append("<div class =  event>"+ 'youve got' + this.score + "</div>")
+	if(this.score === 0){
+		$('body').append("<div class = result>" + 'whoah chill down Hitler, it\'s just a game' + " </div>")
+	}
 
-// function theSequel (){
-// 	function narration(evnts,eventNumber){
-// 		setTheScene
-// 	}
-// }
-// function display(i  ){
-	
-// 	setTheScene(i)
-// 	actionScene(i)
-// 	afterScript(i)
-// }
+	if(this.score < 15){
+		$('body').append("<div class = result>"+ 'are you acctualy trying to be bad  ? ' + "</div>")
+	}
+
+	if(this.score === 15){
+		$('body').append("<div class = result>" + 'you\'re not a bad guy ... but you\'re not good either' + "</div>")
+	}
+
+	if(this.score > 15){
+		$('body').append("<div class = result>"+ 'hey, you\'re a nice guy, you just need some help ' + " </div>")
+	}
+
+	if(this.score === 30){
+		$('body').append("<div class = result>" + 'are jesus or somthing ?' + " </div>")
+	}
+}
+
 
 function Everything (events) {
 	var idk = {}
 	idk.cnt = 0;
 	idk.index ;
+	idk.score = 0;
 	idk.events = events;
 	idk.setTheScene = setTheScene;
 	idk.actionScene = actionScene;
 	idk.afterScript = afterScript;
-	return idk
+	idk.endScript = endScript;
+	return idk;
 }
 
 $('#startScene').on('click',function (){
