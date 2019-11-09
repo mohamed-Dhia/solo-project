@@ -7,20 +7,22 @@ body{
 }
 
 .prompt {
-    margin: 0px 130px;
-    padding: 0px 394px;
+    padding: 0% 4%;
+    margin: 0% 22%;
+    /* padding: 36px 0px; */
     font-family: 'Yeon Sung', cursive;
     color: white;
-    font-size: 150%;
+    font-size: 100%;
     background-color: rgba(0,0,0,0.6);
     border-radius: 12px;
     position: fixed;
     bottom: 96px;
 }
 .choose{
-    display: flex;
-    margin: 0px 130px;
-    padding: 0px 394px;
+	display: flex;
+    flex-direction: row;
+    margin: 0px 44px;
+    padding: -1px 394px;
     font-family: 'Yeon Sung', cursive;
     color: white;
     font-size: 150%;
@@ -31,12 +33,13 @@ body{
 }
 
 .event{
-    text-align: center;
+	text-align: center;
     color: white;
     font-weight: bold;
     font-family: 'Yatra One', cursive;
     font-size: 150%;
     padding-bottom: 0%;
+    padding: 5% 15%;	
 }
 
 .advance{
@@ -89,7 +92,7 @@ body{
 }
 
 .resultcointainer {
-    margin: 0px 78px;
+    margin: 0px 181px;
     padding: 36px 400px;
     font-family: 'Yeon Sung', cursive;
     color: white;
@@ -102,7 +105,6 @@ body{
 
 .monologe {
     margin: 0px 78px;
-    /* padding: 0px 394px; */
     font-family: 'Yeon Sung', cursive;
     color: white;
     font-size: 150%;
