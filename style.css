@@ -7,21 +7,27 @@ body{
 }
 
 .prompt {
-    text-align: center;
+    margin: 0px 130px;
+    padding: 0px 394px;
+    font-family: 'Yeon Sung', cursive;
+    color: white;
+    font-size: 150%;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 12px;
     position: fixed;
-    bottom: 0px;
-    padding: 100px;
-    display: none;
-    display: block;
-    padding: 300px 0px;
-    margin: -255px 500px;
+    bottom: 96px;
 }
 .choose{
-    text-align: center;
+    display: flex;
+    margin: 0px 130px;
+    padding: 0px 394px;
+    font-family: 'Yeon Sung', cursive;
+    color: white;
+    font-size: 150%;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 12px;
     position: fixed;
-    bottom: 0px;
-    margin: 200px 600px;
-    position: fixed;
+    bottom: 96px;
 }
 
 .event{
@@ -34,13 +40,14 @@ body{
 }
 
 .advance{
-    margin-left: 45%;
-    margin: 0% 27% 0% 25%;
-    padding: 2% 20% 2% 20%;
-    background-color: #924C2D;
-    border: none;
-    border-radius: 12px;
+    border-color: white;
+    border-radius: 30px;
     font-family: 'Yeon Sung', cursive;
+    background-color: transparent;
+    margin: 16px 0px;
+    padding: 3px 77px;
+    font-size: larger;
+    color: white;
 }
 .startScene {
 	margin-top : 40%;
@@ -50,12 +57,12 @@ body{
 	text-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
 	font-size: 150%;
 }
-#startScene {
+/*#startScene {
 	margin-top: 43%;
-}
+}*/
 
 .option {
-    margin-left: 45%;
+/*    margin-left: 45%;
     margin: 7px 7px;
     padding: 0px 15px;
     background-color: #924C2D;
@@ -64,11 +71,43 @@ body{
     font-family: 'Yeon Sung', cursive;
     text-align: center;
     padding: 2% 20% 2% 20%;
-    border: none;
+    border: none;*/
+    border-color: white;
+    border-radius: 30px;
+    font-family: 'Yeon Sung', cursive;
+    background-color: transparent;
+    margin: 16px 96px;
+    padding: 3px 77px;
+    font-size: larger;
+    color: white;
 }
 .option:hover{
 	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.5);
 	text-shadow: 0 12px 16px 0 rgba(0,0,0,0.24);
 	color: yellow;
 	font-size: 120%;
+}
+
+.resultcointainer {
+    margin: 0px 78px;
+    padding: 36px 400px;
+    font-family: 'Yeon Sung', cursive;
+    color: white;
+    font-size: 150%;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 12px;
+    position: fixed;
+    bottom: 96px;
+}
+
+.monologe {
+    margin: 0px 78px;
+    /* padding: 0px 394px; */
+    font-family: 'Yeon Sung', cursive;
+    color: white;
+    font-size: 150%;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 12px;
+    position: fixed;
+    bottom: 96px;
 }
