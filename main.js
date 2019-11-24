@@ -281,6 +281,6 @@ function AllMethodes (events) { // using oop makes everything easier
 }
 
 $('#startScene').on('click',function (){ // to start the hole thing
-	var scene = Everything(events) 
+	var scene = AllMethodes(events) 
 	scene.setTheScene()
 }) 
